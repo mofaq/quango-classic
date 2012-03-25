@@ -45,8 +45,6 @@
  
 
         .clear
-        .entry.left
-          = "view: classic | <a href=\'?mobile=true\'>mobile</a>"
 
   - if logged_in? && current_user.owner_of?(current_group)
     = render :partial => "layouts/debug"
