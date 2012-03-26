@@ -1,0 +1,41 @@
+.slideshow
+  
+  .section-listing-welcome{:class => "features", :style => "background-color:#ffffff; width:100%; overflow:hidden"}
+    - slideshow_delay = 0
+    - @doctypes.each do |doctype|
+      - if doctype.name == current_group.banner_content
+        - slideshow_delay = slideshow_delay + 500
+
+        %div{:style=>"width:100%;float:left;border-right:1px solid white", :class=>"feature-box"}
+
+          %h4{:style => "position:relative"}
+            .left
+              = "#{doctype.name}"
+
+            .counter-container{:style => "position:absolute;top:0px;right:0px;width:100%;height:100%"}
+              #counter{:style => "position:relative;width:300px;margin:0 8px 0 0;height:100%;float:right;"}
+
+          .feature-slideshow{:style => "height:228px;overflow:hidden;"}
+            - slideshow_items_array = Array.new
+            - doctype.items.reverse.each do |item|
+              - slideshow_items_array << item 
+
+            .slideshow{:class=>"#{doctype.name}", :style=>"display:none"}    
+              - slideshow_items_array[0..5].each do |item|
+
+                = render :partial => "/items/banner", :locals => {:item => item, :sort=>"hot"}
+
+            -slideshow_items_array = ""
+
+
+        %script{:type => "text/javascript"}
+        :javascript
+          function slideshow(){
+            $(document).ready(function(){
+              $('.slideshow.#{doctype.name}').fadeIn('fast').cycle({
+                fx: 'fade',
+                pager: $('#counter')
+              });
+            });
+          }
+          setTimeout('slideshow()',#{slideshow_delay});

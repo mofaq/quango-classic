@@ -728,7 +728,7 @@ $.fn.cycle.createPagerAnchor = function(i, el, $p, els, opts) {
 		debug('pagerAnchorBuilder('+i+', el) returned: ' + a);
 	}
 	else
-		a = '<a href="#">'+(i+1)+'</a>';
+		a = '<a href="#" style="font-size:2em;height:1em;text-align:right;float:right;">'+'&#8226;'+'</a>';
 		
 	if (!a)
 		return;
@@ -863,7 +863,7 @@ $.fn.cycle.defaults = {
 	timeout:	   4000,  // milliseconds between slide transitions (0 to disable auto advance)
 	timeoutFn:     null,  // callback for determining per-slide timeout value:  function(currSlideElement, nextSlideElement, options, forwardFlag)
 	continuous:	   0,	  // true to start next transition immediately after current one completes
-	speed:		   1000,  // speed of the transition (any valid fx speed value)
+	speed:		   4000,  // speed of the transition (any valid fx speed value)
 	speedIn:	   null,  // speed of the 'in' transition
 	speedOut:	   null,  // speed of the 'out' transition
 	next:		   null,  // selector for element to use as event trigger for next slide

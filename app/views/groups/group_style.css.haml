@@ -1,4 +1,92 @@
+- grp = current_group
 - group = current_group
+- stop1 = grp.primary_dark
+- stop2 = grp.primary
+- stop3 = grp.secondary
+- stop4 = grp.tertiary
+- stop5 = grp.text_colour
+
+- alt1 = grp.supplementary_dark
+- alt2 = grp.supplementary
+- alt3 = grp.supplementary_lite
+
+\#counter a{color:white;margin:0 8px 0 0}
+
+
+\.search_field{padding:4px 8px;font-family:sans-serif;border-radius:4px;font-size:1em;font-weight:bold;width:416px;margin:8px 16px 8px 0; height:1.5em; overflow:hidden;
+\-webkit-box-shadow:1px 1px 1px #{stop3}, -1px -1px 1px #{stop1};border:1px inset #{stop5}; 
+\-moz-box-shadow:1px 1px 1px #{stop3}, -1px -1px 1px #{stop1};border:1px inset #{stop5};
+background:-webkit-gradient(linear,left top,left bottom,from(#{stop4}),to(#{stop5}));
+background: -moz-linear-gradient(top, #{stop4} 0%, #{stop5} 100%); 
+}
+
+
+\.inner-button{
+cursor:pointer;
+text-shadow:-1px -1px 1px #{stop1},1px 1px 1px #{stop2};
+font-size:1.2em;
+padding:4px 16px;margin:0;
+border-radius: 8px;
+color:white;
+font-weight:bold;
+\-webkit-box-shadow:1px 1px 1px #{stop4}, -1px -1px 1px #{stop2};
+\-moz-box-shadow:1px 1px 1px #{stop4}, -1px -1px 1px #{stop2};
+
+border-top: 1px solid #{stop1};
+border-left: 1px solid #{stop1};
+border-bottom: 1px solid #{stop2};
+border-right: 1px solid #{stop2};
+background: #{stop1}; /* Old browsers */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#{stop2}), color-stop(49%,#{stop3}), color-stop(51%,#{stop2}), color-stop(100%,#{stop1})); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #{stop2} 0%,#{stop3} 49%,#{stop2} 51%,#{stop1} 100%); /* Chrome10+,Safari5.1+ */
+background: -moz-linear-gradient(top, #{stop2} 0%, #{stop3} 49%, #{stop2} 51%, #{stop1} 100%); /* FF3.6+ */
+background: -o-linear-gradient(top, #{stop2} 0%,#{stop1} 50%,#{stop3} 51%,#{stop1} 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #{stop2} 0%,#{stop1} 50%,#{stop3} 51%,#{stop1} 100%); /* IE10+ */
+background: linear-gradient(top, #{stop2} 0%,#{stop1} 50%,#{stop3} 51%,#{stop1} 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{stop2}', endColorstr='#{stop1}',GradientType=0 ); /* IE6-9 */
+}
+
+\.inner-submit{
+cursor:pointer;
+text-shadow:-1px -1px 1px #{alt2},1px 1px 1px #{alt3};
+font-size:1.2em;
+padding:4px 16px;margin:0;
+border-radius: 8px;
+color:white;
+font-weight:bold;
+\-webkit-box-shadow:1px 1px 2px #{stop5}, -1px -1px 2px #{alt1};
+\-moz-box-shadow:1px 1px 2px #{stop5}, -1px -1px 2px #{alt1};
+border-top: 1px solid #{alt3};
+border-left: 1px solid #{alt3};
+border-bottom: 1px solid #{alt1};
+border-right: 1px solid #{alt1};
+
+
+
+background: #{alt1}; /* Old browsers */
+background: -moz-linear-gradient(top, #{alt1} 0%, #{alt2} 50%, #{alt3} 60%, #{alt3} 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#{alt1}), color-stop(50%,#{alt2}), color-stop(60%,#{alt3}), color-stop(100%,#{alt3})); /* Chrome,Safari4+ */
+
+background: -webkit-linear-gradient(top, #{alt2} 0%,#{alt3} 50%,#{alt2} 51%,#{alt2} 100%); /* Chrome10+,Safari5.1+ */
+
+-#background: -webkit-linear-gradient(top, #{alt2} 0%,#{alt3} 50%,#{alt1} 60%,#{alt1} 100%); /* Chrome10+,Safari5.1+ */
+
+
+background: -o-linear-gradient(top, #{alt1} 0%,#{alt2} 50%,#{alt3} 60%,#{alt1} 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #{alt1} 0%,#{alt2} 50%,#{alt3} 60%,#{alt1} 100%); /* IE10+ */
+background: linear-gradient(top, #{alt1} 0%,#{alt2} 50%,#{alt3} 60%,#{alt1} 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{alt1}', endColorstr='#{alt3}',GradientType=0 ); /* IE6-9 */
+cursor:pointer;
+}
+
+\.inset{
+margin-top:4px;
+\-webkit-box-shadow:1px 1px 1px #{stop4}, -1px -1px 1px #{stop1};
+\-moz-box-shadow:1px 1px 1px #{stop4}, -1px -1px 1px #{stop1};
+border-radius:8px;
+padding: 8px;
+}
+
 
 \.quick-create-form{background: -webkit-gradient(linear,left top,left bottom,to(#{current_group.supplementary_dark}),from(#{current_group.supplementary}));background: -moz-linear-gradient(top,#{current_group.supplementary},#{current_group.supplementary_dark});filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,endColorstr='#{current_group.supplementary_dark}',startColorstr='#{current_group.supplementary}')}
 

@@ -24,7 +24,7 @@
 %div.share_bg{:style=>"float:right; width:300px; border-left:4px solid white"}
   = render :partial => "shared/share_box"
 
-%div.system-footer{:style=>"float:left; width:728px;"}
+%div.system-footer{:style=>"margin:0 auto;width:1029px; border-top:4px solid gainsboro"}
   .footer
     .notice{:style=>"margin:0"}
 
@@ -42,9 +42,9 @@
         =  link_to "credits","/about/credits"
         .clear
 
- 
 
-        .clear
+
+      .clear
 
   - if logged_in? && current_user.owner_of?(current_group)
     = render :partial => "layouts/debug"

@@ -1,6 +1,6 @@
 - is_mobile = params[:mobile]
 
-#below-the-fold{:style=>"height:24px;line-height:22px;text-transform:uppercase;font-family:'Arial Narrow',sans-serif;color:white;background-color:#{current_group.primary}; border-top:4px solid #{current_group.tertiary};margin: 0; font-size:14px; letter-spacing:0px;font-weight:bold;border-bottom:4px solid white"}
+#below-the-fold{:style=>"height:28px;line-height:24px;text-transform:uppercase;font-family:'Arial Narrow',sans-serif;color:white;background-color:#{current_group.secondary}; border-top:8px solid #{current_group.primary};margin: 0; font-size:14px; letter-spacing:0px;font-weight:bold;border-bottom:4px solid white"}
   .below-the-fold{:style=>"width:1022px; height:24px;font-family:Arial,sans-serif; font-weight:bold; font-size:14px;color:white; letter-spacing:-1px;"}
     %div{:style=>"padding:1px 0 3px 4px; height:18px; width:18px; float:left;"}
       = "<img src='/images/logos/star_32_point.png' height='14px' width='14px'/>"
@@ -57,9 +57,9 @@
           -#= render :partial => "below_the_fold", :locals => {:expanded => true}
 
         %h4
-          = "About this site"
+          = "Who we are"
         .content
-          .markdown{:style => "padding:8px"}
+          .markdown{:style => "padding:8px;background-color:#{current_group.tertiary};"}
             = markdown(current_group.description)
 
 

@@ -15,6 +15,7 @@ class Group
   key :_id, String
   key :parent_id, String #this will be used for groups hierarchies
   key :group_type, String, :default => "mobile"
+  key :group_type, String, :default => "notmobile"
 
   key :agent_id, String #stores the agent id
   key :owner_id, String
@@ -106,6 +107,8 @@ class Group
   key :has_product_gallery, Boolean, :default => false
   key :has_video_on_homepage, Boolean, :default => false
 
+  key :has_banner, Boolean, :default => false
+  key :banner_content, String, :default => "thoughts"
 
   key :has_slideshow, Boolean,  :default => false
   key :slideshow_content, String,  :default => "articles"

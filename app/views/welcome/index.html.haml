@@ -60,6 +60,9 @@
   - else
     -content_for :main do
 
+      -if current_group.has_banner
+        = render :partial => "banner", :locals => {:expanded => true}
+
       -if current_group.has_leaderboard
         = render :partial => "shared/leaderboard"
 
