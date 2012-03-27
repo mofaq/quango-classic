@@ -25,7 +25,7 @@
             .left{:style=>"width:238px;background-color:#ffffff;border-right:4px solid white; display:block"}
               - section_link = doctype.name.capitalize
               .div.inner{:style=>"margin:0"}
-                .column-header{:style=>"height:28px;padding:8px 8px 8px 8px;margin:8px 0 0 0;line-height:2em;font-weight:bold;font-size:14px;color:#{current_group.tertiary};background-color:tan;letter-spacing:-1px;"}
+                .column-header{:style=>"height:28px;padding:8px 8px 8px 8px;margin:8px 0 0 0;line-height:2em;font-weight:bold;font-size:14px;color:#{current_group.text_colour};background-color:#{current_group.tertiary};letter-spacing:-1px;"}
                   = link_to section_link, items_path(doctype), :style => "color:#{current_group.text_colour}"
                   %div{:style=>"float:right;"}
                     %a{:style=>"float:right; padding:0 12px;font-size:0.9em;line-height:2em;", :class => "inner-submit", :href => new_item_path(doctype)}
