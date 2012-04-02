@@ -98,6 +98,10 @@ class Group
   key :above_the_fold, Boolean, :default => false
   key :below_the_fold, Boolean, :default => true
 
+  key :column1_content, Array
+  key :column2_content, Array
+  key :column3_content, Array
+
   key :has_quick_create, Boolean, :default => false
   key :quick_create, String
   key :quick_create_heading, String, :default => "How can we help?"

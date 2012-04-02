@@ -17,81 +17,84 @@
 .clear
 .below
 
+  - if true
+    = render :partial => "tri_column"
 
-  .welcome-index-below{:style => "float:left; width:729px;"}
-    .content
+  - else
+    .welcome-index-below{:style => "float:left; width:729px;"}
+      .content
 
-      - if current_group.has_product_gallery
-        .inner
-          = render :partial => "product_gallery", :locals => {:expanded => true}
-
-
-
-      .inner
-        = render :partial => current_group.welcome_layout, :locals => {:expanded => true}
-
-
-
-    .clear
-
-
-    .content
-      .inner
-        -#= yield :list
-        .clear
-
-
-  - if !is_mobile
-
-    #sidebar-inner{:style => "float:right; width:300px;"}
-
-
-
-
-
-      .block{:style => "margin-bottom:4px"}
-
-        - if current_group.has_quick_create?
+        - if current_group.has_product_gallery
           .inner
-            = render :partial => "shared/quick_create"
-          -#= render :partial => "below_the_fold", :locals => {:expanded => true}
-
-        %h4
-          = "Who we are"
-        .content
-          .markdown{:style => "padding:8px;background-color:#{current_group.tertiary};"}
-            = markdown(current_group.description)
+            = render :partial => "product_gallery", :locals => {:expanded => true}
 
 
 
-      -if current_group.has_medium_rectangle
-        .medium-rectangle{:style=>"background-color:white;margin:10px 0;padding:2px 0; border-bottom:2px solid gainsboro; border-top:2px solid gainsboro"}
-          = current_group.medium_rectangle_content
-        .clear
+        .inner
+          = render :partial => current_group.welcome_layout, :locals => {:expanded => true}
 
 
 
-
-      .block{:style=>"display:none"}
-        = render :partial => "shared/sidebar_actions",  :locals => {:width => "wide"}
-
-      -#- current_group.widgets.each do |widget|
-        -#.widget.block{:id => widget.name}
-          -#= render :partial => widget.partial_name, :locals => {:widget => widget, :width => "wide"}
+      .clear
 
 
+      .content
+        .inner
+          -#= yield :list
+          .clear
 
-      = render :partial => "shared/community_sponsor",  :locals => {:width => "wide"}
-      = render :partial => "shared/sponsored_links",  :locals => {:width => "wide"}
+
+    - if !is_mobile
+
+      #sidebar-inner{:style => "float:right; width:300px;"}
 
 
 
 
 
+        .block{:style => "margin-bottom:4px"}
+
+          - if current_group.has_quick_create?
+            .inner
+              = render :partial => "shared/quick_create"
+            -#= render :partial => "below_the_fold", :locals => {:expanded => true}
+
+          %h4
+            = "Who we are"
+          .content
+            .markdown{:style => "padding:8px;background-color:#{current_group.tertiary};"}
+              = markdown(current_group.description)
 
 
-    -if !current_group.isolate # this will be the group connect thing
-      -#= render :partial => "featured_groups", :locals => {:width => "wide"}
+
+        -if current_group.has_medium_rectangle
+          .medium-rectangle{:style=>"background-color:white;margin:10px 0;padding:2px 0; border-bottom:2px solid gainsboro; border-top:2px solid gainsboro"}
+            = current_group.medium_rectangle_content
+          .clear
+
+
+
+
+        .block{:style=>"display:none"}
+          = render :partial => "shared/sidebar_actions",  :locals => {:width => "wide"}
+
+        -#- current_group.widgets.each do |widget|
+          -#.widget.block{:id => widget.name}
+            -#= render :partial => widget.partial_name, :locals => {:widget => widget, :width => "wide"}
+
+
+
+        = render :partial => "shared/community_sponsor",  :locals => {:width => "wide"}
+        = render :partial => "shared/sponsored_links",  :locals => {:width => "wide"}
+
+
+
+
+
+
+
+      -if !current_group.isolate # this will be the group connect thing
+        -#= render :partial => "featured_groups", :locals => {:width => "wide"}
 
 
   %script{:type => "text/javascript"}

@@ -1,0 +1,8 @@
+- col_items = []
+- current_group.doctypes.each do |doctype|
+  - if content.include?(doctype.name)
+    - doctype.items.reverse.each do |item|
+      - col_items = col_items << item
+
+- col_items[0..4].each do |item|
+  = render :partial => "/items/tri_column_item", :locals => {:item => item}
