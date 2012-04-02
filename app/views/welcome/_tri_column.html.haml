@@ -1,20 +1,74 @@
-#col_1{:style => "width:29%; margin: 1% 2%; float:left"}
-  %h2
-    = current_group.column1_title.to_s
-  .note
-    = current_group.column1_description.to_s
-  = render :partial => "col", :locals => {:content => current_group.column1_content}
+.left{:style=>"width:238px;background-color:#ffffff;border-right:4px solid white; display:block;border-radius:0 8px;"}
 
-#col_2{:style => "width:29%; margin: 1% 2%; float:left"}
-  %h2
-    = current_group.column2_title.to_s
-  .note
-    = current_group.column2_description.to_s
-  = render :partial => "col", :locals => {:content => current_group.column2_content}
+  .div.inner{:style=>"margin:0"}
+    .column-header{:style=>"border-radius:0 0 0 0;border-bottom:0;height:28px;padding:8px;line-height:2em;font-weight:bold;font-size:14px;color:#{current_group.text_colour};letter-spacing:-1px;background-color:#{current_group.secondary}"}
+      = current_group.column1_title.to_s
 
-#col_3{:style => "width:29%; margin: 1% 2%; float:left"}
-  %h2
-    = current_group.column3_title.to_s
-  .note
-    = current_group.column3_description.to_s
-  = render :partial => "col", :locals => {:content => current_group.column3_content}
+    .note{:style=>"padding:8px;font-size:11px;font-weight:bold;letter-spacing:-1px"}
+      = current_group.column1_description.to_s
+
+
+  .div
+
+    = render :partial => "col", :locals => {:content => current_group.column1_content}
+
+
+
+.left{:style=>"width:238px;background-color:#ffffff;border-right:4px solid white; display:block"}
+
+  .div.inner{:style=>"margin:0"}
+    .column-header{:style=>"border-radius:0 0 0 0;border-bottom:0;height:28px;padding:8px;line-height:2em;font-weight:bold;font-size:14px;color:#{current_group.text_colour};letter-spacing:-1px;background-color:#{current_group.tertiary}"}
+      = current_group.column2_title.to_s
+    .note{:style=>"padding:8px;font-size:11px;font-weight:bold;letter-spacing:-1px"}
+      = current_group.column2_description.to_s
+  .div
+    = render :partial => "col", :locals => {:content => current_group.column2_content}
+
+.left{:style=>"width:546px;"}
+  .div{:style=>"height:8px;width:100%;background-color:#{current_group.supplementary_lite};"}
+
+    .left{:style=>"width:238px;background-color:#ffffff; display:block"}
+
+      .div.inner{:style=>"margin:0;width:238px;"}
+        .column-header{:style=>"border-radius:0 0 8px 8px;height:28px;padding:8px;line-height:2em;font-weight:bold;font-size:14px;color:#{current_group.text_colour};background-color:#{current_group.supplementary_lite};letter-spacing:-1px;",:class=>"yes-yarra"}
+          = current_group.column3_title.to_s
+        .note{:style=>"padding:8px;font-size:11px;font-weight:bold;letter-spacing:-1px"}
+          = current_group.column3_description.to_s
+      .div
+        = render :partial => "col", :locals => {:content => current_group.column3_content}
+
+
+    - if current_group.has_columns
+
+      .sidebar-inner{:style => "float:right; width:300px;margin-left:8px;"}
+
+        .block{:style => "margin-bottom:4px"}
+
+
+          .column-header{:style=>"margin-top:16px;border-radius:0 8px 0 0;border-bottom:0;height:28px;padding:8px 0 0 8px;line-height:2em;font-weight:bold;font-size:14px;color:#{current_group.text_colour};letter-spacing:-1px;background-color:#{current_group.secondary}"}
+            = "Who we are"
+          .content
+            .markdown{:style => "padding:8px;background-color:#{current_group.tertiary};"}
+              = markdown(current_group.description)
+
+
+
+        -if current_group.has_medium_rectangle
+          .medium-rectangle{:style=>"background-color:white;margin:10px 0;padding:2px 0; border-bottom:2px solid gainsboro; border-top:2px solid gainsboro"}
+            = current_group.medium_rectangle_content
+          .clear
+
+
+
+
+          .block{:style=>"display:none"}
+            = render :partial => "shared/sidebar_actions",  :locals => {:width => "wide"}
+
+          -#- current_group.widgets.each do |widget|
+            -#.widget.block{:id => widget.name}
+              -#= render :partial => widget.partial_name, :locals => {:widget => widget, :width => "wide"}
+
+
+
+          = render :partial => "shared/community_sponsor",  :locals => {:width => "wide"}
+          = render :partial => "shared/sponsored_links",  :locals => {:width => "wide"}

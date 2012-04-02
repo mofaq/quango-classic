@@ -4,5 +4,21 @@
     - doctype.items.reverse.each do |item|
       - col_items = col_items << item
 
-- col_items[0..4].each do |item|
-  = render :partial => "/items/tri_column_item", :locals => {:item => item}
+
+- col_items[0..0].each do |item|
+  .summary-list-text{:style => "/**/"}
+    = render :partial => "/items/summary_list_feature", :locals => {:item => item, :sort=>"hot"}
+
+  .content
+    .more{:style => "border-top: 4px solid gainsboro"}
+      .summary-list-text
+
+        - col_items[1..3].each do |item|
+          = render :partial => "/items/summary_list_thumbnail_small", :locals => {:item => item, :sort=>"hot"}
+
+
+    .also
+      .more{:style => "border-top: 4px solid gainsboro"}
+        .summary-list-text
+          - col_items[4..7].each do |item|
+            = render :partial => "/items/summary_list_text", :locals => {:item => item}

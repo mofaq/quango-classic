@@ -1,5 +1,15 @@
 .columns
 
+  %h1
+    = "Column Settings"
+
+
+  .group
+    = f.check_box :has_columns, :class => "checkbox"
+    = f.label :has_columns, "Show columns below the fold", :class => "radio"
+
+  %hr
+
   #column_1{:style => "margin: 20px; width:30%;float:left;"}
     %h3
       = "COLUMN 1 CONTENT"

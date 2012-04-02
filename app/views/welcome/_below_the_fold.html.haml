@@ -17,7 +17,7 @@
 .clear
 .below
 
-  - if true
+  - if current_group.has_columns
     = render :partial => "tri_column"
 
   - else
@@ -59,7 +59,7 @@
               = render :partial => "shared/quick_create"
             -#= render :partial => "below_the_fold", :locals => {:expanded => true}
 
-          %h4
+          .column-header{:style=>"margin-top:8px;border-radius:0 8px 0 0;border-bottom:0;height:28px;padding:8px;line-height:2em;font-weight:bold;font-size:14px;color:#{current_group.text_colour};letter-spacing:-1px;background-color:#{current_group.secondary}"}
             = "Who we are"
           .content
             .markdown{:style => "padding:8px;background-color:#{current_group.tertiary};"}
