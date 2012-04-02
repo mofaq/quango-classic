@@ -1,0 +1,28 @@
+.columns
+
+  #column_1{:style => "margin: 20px"}
+    = "COLUMN 1 CONTENT"
+    %div{:style => "margin: 5px"}
+      - @current_group.doctypes.each do |doctype|
+        = hidden_field_tag "group[column1_content][]", ""
+        = check_box_tag "group[column1_content][]", doctype.name, current_group.column1_content.include?(doctype.name) ? true : false
+        = "#{doctype.name}"
+  
+  #column_2{:style => "margin: 20px"}
+    = "COLUMN 2 CONTENT"
+    %div{:style => "margin: 5px"}
+      - @current_group.doctypes.each do |doctype|
+        = hidden_field_tag "group[column2_content][]", ""
+        = check_box_tag "group[column2_content][]", doctype.name, current_group.column2_content.include?(doctype.name) ? true : false
+        = "#{doctype.name}"
+
+  #column_3{:style => "margin: 20px"}
+    = "COLUMN 3 CONTENT"
+    %div{:style => ":margin 5px"}
+      - @current_group.doctypes.each do |doctype|
+        = hidden_field_tag "group[column3_content][]", ""
+        = check_box_tag "group[column3_content][]", doctype.name, current_group.column3_content.include?(doctype.name) ? true : false
+        = "#{doctype.name}"
+
+.submit
+  = f.submit t('scaffold.update'), :class => "action-button"

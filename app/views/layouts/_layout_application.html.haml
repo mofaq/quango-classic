@@ -109,7 +109,7 @@
     -if current_group.show_context_navigation
       #header-container
         #header-container-inner
-          .navigation-container{:style=>"width:1032px; height:40px;"}
+          .navigation-container{:style=>"width:100%; height:40px;"}
             -#if !current_group.disable_signups? && logged_in?
             .home{:style=>"float:left; height:40px; line-height:40px;"}
               = link_to "<img src=\'/images/icons/house.png\' style=\'margin:12px\'>", "/"
