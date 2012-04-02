@@ -1,8 +1,20 @@
 #col_1{:style => "width:29%; margin: 1% 2%; float:left"}
+  %h2
+    = current_group.column1_title.to_s
+  .note
+    = current_group.column1_description.to_s
   = render :partial => "col", :locals => {:content => current_group.column1_content}
 
 #col_2{:style => "width:29%; margin: 1% 2%; float:left"}
+  %h2
+    = current_group.column2_title.to_s
+  .note
+    = current_group.column2_description.to_s
   = render :partial => "col", :locals => {:content => current_group.column2_content}
 
 #col_3{:style => "width:29%; margin: 1% 2%; float:left"}
+  %h2
+    = current_group.column3_title.to_s
+  .note
+    = current_group.column3_description.to_s
   = render :partial => "col", :locals => {:content => current_group.column3_content}

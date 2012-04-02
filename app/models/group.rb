@@ -98,6 +98,14 @@ class Group
   key :above_the_fold, Boolean, :default => false
   key :below_the_fold, Boolean, :default => true
 
+  key :column1_title, String, :default=>"something"
+  key :column2_title, String, :default=>"something"
+  key :column3_title, String, :default=>"something"
+
+  key :column1_description, String, :default=>"something"
+  key :column2_description, String, :default=>"something"
+  key :column3_description, String, :default=>"something"
+
   key :column1_content, Array
   key :column2_content, Array
   key :column3_content, Array

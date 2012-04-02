@@ -1,23 +1,47 @@
 .columns
 
-  #column_1{:style => "margin: 20px"}
-    = "COLUMN 1 CONTENT"
+  #column_1{:style => "margin: 20px; width:30%;float:left;"}
+    %h3
+      = "COLUMN 1 CONTENT"
+    .note
+      = "Title"
+    = f.text_field :column1_title, :class => "text_field"
+    .note
+      = "Description"
+    = f.text_field :column1_description, :class => "text_field"
+
     %div{:style => "margin: 5px"}
       - @current_group.doctypes.each do |doctype|
         = hidden_field_tag "group[column1_content][]", ""
         = check_box_tag "group[column1_content][]", doctype.name, current_group.column1_content.include?(doctype.name) ? true : false
         = "#{doctype.name}"
   
-  #column_2{:style => "margin: 20px"}
-    = "COLUMN 2 CONTENT"
+  #column_2{:style => "margin: 20px; width:30%;float:left;"}
+    %h3
+      = "COLUMN 2 CONTENT"
+    .note
+      = "Title"
+    = f.text_field :column2_title, :class => "text_field"
+    .note
+      = "Description"
+    = f.text_field :column2_description, :class => "text_field"
+
     %div{:style => "margin: 5px"}
       - @current_group.doctypes.each do |doctype|
         = hidden_field_tag "group[column2_content][]", ""
         = check_box_tag "group[column2_content][]", doctype.name, current_group.column2_content.include?(doctype.name) ? true : false
         = "#{doctype.name}"
 
-  #column_3{:style => "margin: 20px"}
-    = "COLUMN 3 CONTENT"
+  #column_3{:style => "margin: 20px; width:30%;float:left;"}
+    %h3
+      = "COLUMN 3 CONTENT"
+    .note
+      = "Title"
+    = f.text_field :column3_title, :class => "text_field"
+    .note
+      = "Description"
+    = f.text_field :column3_description, :class => "text_field"
+
     %div{:style => ":margin 5px"}
       - @current_group.doctypes.each do |doctype|
         = hidden_field_tag "group[column3_content][]", ""
