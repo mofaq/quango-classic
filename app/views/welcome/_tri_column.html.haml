@@ -1,8 +1,11 @@
 #col_1{:style => "width:29%; margin: 1% 2%; float:left"}
-  = render :partial => "col", :locals => {:content => current_group.column1_content}
+  - @column_items[:col1_items].each do |item|
+    = render :partial => "/items/tri_column_item", :locals => {:item => item}
 
 #col_2{:style => "width:29%; margin: 1% 2%; float:left"}
-  = render :partial => "col", :locals => {:content => current_group.column2_content}
+  - @column_items[:col2_items].each do |item|
+    = render :partial => "/items/tri_column_item", :locals => {:item => item}
 
 #col_3{:style => "width:29%; margin: 1% 2%; float:left"}
-  = render :partial => "col", :locals => {:content => current_group.column3_content}
+  - @column_items[:col3_items].each do |item|
+    = render :partial => "/items/tri_column_item", :locals => {:item => item}
