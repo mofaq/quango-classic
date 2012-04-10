@@ -18,6 +18,12 @@ class WelcomeController < ApplicationController
 
     @doctypes = current_group.doctypes
 
+    @column_items = {
+      :col1_items => col_items(current_group.column1_content),
+      :col2_items => col_items(current_group.column2_content),
+      :col3_items => col_items(current_group.column3_content)
+    }
+
     #@doctype = @doctypes.find_by_slug_or_id(params[:doctype_id])
     @doctype = @doctypes.find(current_group.quick_create)
 
@@ -144,6 +150,16 @@ class WelcomeController < ApplicationController
     end
 
     redirect_to params[:source].to_s[0,1]=="/" ? params[:source] : root_path
+  end
+
+  def col_items(docnames)
+    items = Array.new
+    current_group.doctypes.each do |doctype|
+      if docnames.include?(doctype.name)
+        items += doctype.items
+      end
+    end
+    items.sort{|x,y| y[:activity_at] <=> x[:activity_at]}[0..4]
   end
 
   #related items only relevant of quick create enabled
