@@ -4,6 +4,8 @@
     - doctype.items.reverse.each do |item|
       - col_items = col_items << item
 
+- col_items.sort{ |a,b| b.created_at <=> a.created_at }
+
 
 - col_items[0..0].each do |item|
   .summary-list-text{:style => "/**/"}
