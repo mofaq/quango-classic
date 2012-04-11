@@ -159,7 +159,7 @@ class WelcomeController < ApplicationController
         items += doctype.items
       end
     end
-    items.sort{|x,y| y[:activity_at] <=> x[:activity_at]}[0..9]
+    items.sort{|x,y| y[:activity_at] <=> x[:activity_at]}
   end
 
   #related items only relevant of quick create enabled
