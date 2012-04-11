@@ -10,7 +10,7 @@
 
   .div
 
-    = render :partial => "col", :locals => {:content => current_group.column1_content}
+    = render :partial => "col", :locals => {:col_items => @column_items[:col1_items]}
 
 
 
@@ -22,7 +22,7 @@
     .note{:style=>"padding:8px;font-size:11px;font-weight:bold;letter-spacing:-1px"}
       = current_group.column2_description.to_s
   .div
-    = render :partial => "col", :locals => {:content => current_group.column2_content}
+    = render :partial => "col", :locals => {:col_items => @column_items[:col2_items]}
 
 .left{:style=>"width:546px;"}
   .div{:style=>"height:8px;width:100%;background-color:#{current_group.supplementary_lite};"}
@@ -35,7 +35,7 @@
         .note{:style=>"padding:8px;font-size:11px;font-weight:bold;letter-spacing:-1px"}
           = current_group.column3_description.to_s
       .div
-        = render :partial => "col", :locals => {:content => current_group.column3_content}
+        = render :partial => "col", :locals => {:col_items => @column_items[:col3_items]}
 
 
     - if current_group.has_columns
