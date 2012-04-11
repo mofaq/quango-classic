@@ -152,7 +152,6 @@ class WelcomeController < ApplicationController
     redirect_to params[:source].to_s[0,1]=="/" ? params[:source] : root_path
   end
 
-  
   def col_items(docnames)
     items = Array.new
     current_group.doctypes.each do |doctype|

@@ -38,7 +38,7 @@ base: &common
     secret: twitter secret key
 
   recaptcha:
-    activate: true
+    activate: false
     public_key: your public key
     private_key: your private key
 
