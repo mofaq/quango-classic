@@ -2,16 +2,14 @@
   .summary-list-text{:style => "/**/"}
     = render :partial => "/items/summary_list_feature", :locals => {:item => item}
 
-  .content
-    .more{:style => "border-top: 4px solid gainsboro"}
-      .summary-list-text
+.content
+  .more{:style => "border-top: 4px solid gainsboro"}
+    .summary-list-text
 
-        - col_items[1..3].each do |item|
-          = render :partial => "/items/summary_list_thumbnail_small", :locals => {:item => item}
+      - col_items[1..3].each do |item|
+        = render :partial => "/items/summary_list_thumbnail_small", :locals => {:item => item}
 
-
-    .also
-      .more{:style => "border-top: 4px solid gainsboro"}
-        .summary-list-text
-          - col_items[4..7].each do |item|
-            = render :partial => "/items/summary_list_text", :locals => {:item => item}
+  .more{:style => "border-top: 4px solid gainsboro"}
+    .summary-list-text
+      - col_items[4..7].each do |item|
+        = render :partial => "/items/summary_list_text", :locals => {:item => item}
