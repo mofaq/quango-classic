@@ -30,8 +30,13 @@
     .left{:style=>"width:238px;background-color:#ffffff; display:block"}
 
       .div.inner{:style=>"margin:0;width:238px;"}
-        .column-header{:style=>"border-radius:0 0 8px 8px;height:28px;padding:8px;line-height:2em;font-weight:bold;font-size:14px;color:#{current_group.text_colour};background-color:#{current_group.supplementary_lite};letter-spacing:-1px;",:class=>"yes-yarra"}
+        .column-header{:style=>"border-radius:8px 0 8px 8px;height:28px;padding:8px;line-height:2em;font-weight:bold;font-size:14px;color:#{current_group.text_colour};background-color:#{current_group.supplementary_lite};letter-spacing:-1px;",:class=>"yes-yarra"}
           = current_group.column3_title.to_s
+          .right
+            %div{:style=>"float:right;"}
+              %a{:style=>"float:right; padding:0 12px;font-size:0.9em;line-height:2em;", :class => "inner-submit", :href => "/m/questions/id/new"}
+                = " Ask questions "
+
         .note{:style=>"padding:8px;font-size:11px;font-weight:bold;letter-spacing:-1px"}
           = current_group.column3_description.to_s
       .div
@@ -70,5 +75,5 @@
 
 
 
-          = render :partial => "shared/community_sponsor",  :locals => {:width => "wide"}
-          = render :partial => "shared/sponsored_links",  :locals => {:width => "wide"}
+        = render :partial => "shared/community_sponsor",  :locals => {:width => "wide"}
+        = render :partial => "shared/sponsored_links",  :locals => {:width => "wide"}

@@ -1,5 +1,5 @@
 
-.group-share-box{:style=>"float:right; "}
+.group-share-box{:style=>"float:right;padding:0"}
 
  
   .inner{:style=>"float:right;height:16px; "}
@@ -7,8 +7,8 @@
     -# if !current_group.other_groups_facebook.empty?
     %ul
       %li{:style=>"display:inline"}
-        .text{:style=>"float:left;height:28px;line-height:26px"}  
-          = " Also found on: "
+        .text{:style=>"float:left;height:24px;line-height:24px"}  
+          = " Also on: "
       %li{:style=>"display:inline"}
         = link_to "<img src='/images/application-rss-xml.png' height='16px' width='16px' class='icon'/>", "/items?format=atom"
 
