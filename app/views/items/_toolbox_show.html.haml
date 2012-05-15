@@ -32,6 +32,8 @@
 
     - if logged_in?
       %div{:style=>"float:right"}
+        - if (current_user.can_modify?(@item) || current_user.owner_of?(@item.group))
+          = link_to t("scaffold.destroy"), item_path(@item.doctype_id, @item.id), :confirm => "are you sure?", :method => :delete, :style => "color:white; flota:right", :class => "toolbar-button orange"
         - if (@item.wiki && current_user.can_edit_wiki_post_on?(@item.group)) || current_user.can_edit_others_posts_on?(@item.group) || current_user.can_modify?(@item)
           - if current_user.can_modify?(@item)
             = link_to "Bump", bump_item_path(@item.doctype_id, @item), :style => "color:white; flota:right", :class => "toolbar-button orange"
