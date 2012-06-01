@@ -4,7 +4,7 @@
 
   .entry-details
     .entry-title{:style=>"width:100%;height:32px; line-height:32px; margin-bottom:4px;"}
-      = "Please answer this question..."
+      = "Comment"
   .clear
 
     = f.hidden_field :mode, :value=> local_assigns[:mode]
@@ -19,7 +19,7 @@
         -opts[:id] = "markdown_editor"
         -opts[:style] = "height:64px; width:547px; max-width:547px; margin:0"
 
-  #answer-form
+  -#answer-form
 
     = f.text_area :body, opts
 
@@ -78,11 +78,11 @@
   .answer-form-holder{:style=>"width:568px"}
     .entry-details
       .entry-title{:style=>"height:32px; line-height:32px; margin-bottom:4px;"}
-        = "Answer this question..."
+        = "Comment"
 
     .clear
     %span.left{:style=>"margin:8px"}
-      = "You must be logged in to answer this question... Don't have an account? <a href='/members/new'>Signup now!</a>"
+      = "You must be logged in to leave a comment. Don't have an account? <a href='/members/new'>Signup now!</a>"
     .clear
 
 

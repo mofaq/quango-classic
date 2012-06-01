@@ -117,7 +117,8 @@
           .navigation-container{:style=>"width:1029px; height:40px;"}
             -#if !current_group.disable_signups? && logged_in?
             .home{:style=>"float:left; height:40px; line-height:40px;"}
-              = link_to "<img src=\'/images/icons/house.png\' style=\'margin:12px\'>", "/"
+              -#= link_to "<img src=\'/images/icons/house.png\' style=\'margin:12px\'>", "/"
+              %a{:href=>"/", :style=>"color:white;font-weight:bolder;font-size:1.18em"}Home
 
             .navigation{:style=>"float:left; height:40px; line-height:40px"}
 
